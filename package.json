@@ -1,6 +1,6 @@
 {
-  "name": "invoice",
-  "version": "1.0.0",
+  "name": "@sofiand/invoice",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,11 @@
     "test": "tsc && node test/test.js"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Doual Sofian",
+    "email": "sofiand.dev@gmail.com",
+    "url": "https://fr.linkedin.com/in/sofiandoual"
+  },
   "license": "ISC",
   "dependencies": {
     "from-data-to-pdf": "^1.0.15",
