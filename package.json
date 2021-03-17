@@ -5,13 +5,14 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "node test/test.js" 
+    "test": "tsc && node test/test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "from-data-to-pdf": "^1.0.15",
+    "node-fetch": "^2.6.1",
     "zup": "0.0.1"
   }
 }
