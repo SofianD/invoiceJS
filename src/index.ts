@@ -12,7 +12,7 @@ import * as dataToPDF from 'from-data-to-pdf';
  */
 export async function getInvoice(template: string, data: any[]): Promise<string[]> {
     try {
-        const result = [];
+        const result: string[] = [];
         const t = compile(template);
         for(let i = 0, l = data.length; i < l; i++) {
             const res = t(data[i]);
