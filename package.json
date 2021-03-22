@@ -15,7 +15,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "from-data-to-pdf": "^1.0.15",
+    "from-data-to-pdf": "^1.0.18",
     "node-fetch": "^2.6.1",
     "zup": "0.0.1"
   }
