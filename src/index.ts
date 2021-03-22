@@ -68,6 +68,14 @@ export async function getTemplate(url: string, name: string): Promise<string> {
     }
 }
 
+/**
+ * @author DOUAL Sofian
+ * @description Get remote form from github.
+ * 
+ * @param { string } url 
+ * @param { string } name 
+ * @returns  { string }
+ */
 export async function getForm(url: string, name: string): Promise<string> {
     try {
         const ghData = url.split('/');
