@@ -86,7 +86,14 @@ export async function getForm(url: string, name: string): Promise<string> {
     }
 }
 
-export async function getListOfTemplates(libraries: []): Promise<[]> {
+/**
+ * @author DOUAL Sofian
+ * @description Get the list of remote template names.
+ * 
+ * @param { string } libraries 
+ * @returns { any[] }
+ */
+export async function getListOfTemplates(libraries: string): Promise<any[]> {
     try {
         const res = await (await fetch(libraries)).json();
         const lib = (res.tree.filter((g: any) => g.path === 'lib'))[0];
