@@ -1,11 +1,7 @@
-export interface InvoiceForm {
-    lastname: string;
-    firstname: string;
-    adress: string;
-    params: FormParams[]
-}
-
-export interface FormParams {
+/**
+ * @interface
+ */
+export interface TemplateInfo {
     name: string;
-    value?: string;
+    url: string;
 }
