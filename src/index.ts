@@ -1,11 +1,11 @@
 const compile = require('zup');
 const fetch = require('node-fetch');
 import * as dataToPDF from 'from-data-to-pdf';
+import {TemplateInfo} from './model/model';
 
 /**
  * @author DOUAL Sofian
  * @description Using zup package to compile html code.
- *
  * @param { string } template 
  * @param { any[] } data 
  * @returns { string[] }
@@ -27,11 +27,10 @@ export async function getInvoice(template: string, data: any[]): Promise<string[
 /**
  * @author DOUAL Sofian
  * @description Using zup package to compile html code and save it.
- *
  * @param { string } template 
  * @param { any[] } data
  * @param { dataToPDF.Path } [path]
- * @returns 
+ * @returns { dataToPDF.FileBuffer[] }
  */
 export async function getAndSaveInvoice(template: string, data: any[], path?: dataToPDF.Path): Promise<dataToPDF.FileBuffer[]> {
     try {
@@ -71,8 +70,7 @@ export async function getTemplate(url: string, name: string): Promise<string> {
 /**
  * @author DOUAL Sofian
  * @description Get remote form from github.
- * 
- * @param { string } url 
+ * @param { string } url
  * @param { string } name 
  * @returns  { string }
  */
@@ -89,15 +87,14 @@ export async function getForm(url: string, name: string): Promise<string> {
 /**
  * @author DOUAL Sofian
  * @description Get the list of remote template names.
- * 
  * @param { string } libraries 
- * @returns { any[] }
+ * @returns { TemplateInfo[] }
  */
-export async function getListOfTemplates(libraries: string): Promise<any[]> {
+export async function getListOfTemplates(libraries: string): Promise<TemplateInfo[]> {
     try {
         const res = await (await fetch(libraries)).json();
         const lib = (res.tree.filter((g: any) => g.path === 'lib'))[0];
-        const templates = (await (await fetch(lib.url)).json()).tree.map((x: any) => { return {name: x.path, url: x.url}});
+        const templates: TemplateInfo[] = (await (await fetch(lib.url)).json()).tree.map((x: any) => { return {name: x.path, url: x.url}});
         return templates;
     } catch (error) {
         throw new Error(error);

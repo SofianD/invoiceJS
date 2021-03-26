@@ -1,7 +1,7 @@
 {
   "name": "@sofiand/invoice",
   "version": "0.0.2",
-  "description": "",
+  "description": "This package compiles HTML documents with the corresponding data to save them as PDF files.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
