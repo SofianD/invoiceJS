@@ -9,7 +9,9 @@ This package compiles HTML documents with the corresponding data to save them as
 
 Go to [zup](https://www.npmjs.com/package/zup) to know how templates work.
 
-## getAndSaveInvoice(template: string, data: any[], path?: [dataToPDF.Path](https://github.com/SofianD/from-data-to-pdf#Path)): Promise<[dataToPDF.FileBuffer[]](https://github.com/SofianD/from-data-to-pdf#FileBuffer)>
+Go to [form-data-to-pdf](https://github.com/SofianD/from-data-to-pdf) to get [FileBuffer interface](https://github.com/SofianD/from-data-to-pdf#filebuffer).
+
+## getAndSaveInvoice(template, data, path?)
 ```js
 const invoicejs = require('@sofiand/invoice');
 
