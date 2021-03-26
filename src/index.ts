@@ -31,7 +31,7 @@ export async function getInvoice(template: string, data: any[]): Promise<string[
  * @param { string } template 
  * @param { any[] } data
  * @param { dataToPDF.Path } [path]
- * @returns 
+ * @returns { dataToPDF.FileBuffer[] }
  */
 export async function getAndSaveInvoice(template: string, data: any[], path?: dataToPDF.Path): Promise<dataToPDF.FileBuffer[]> {
     try {
