@@ -50,7 +50,11 @@ main();
 
 async function main() {
     try {
-        result = await invoicejs.getAndSaveInvoice(template, data, {toSaveFiles: 'C:/Users/Me/Documents'});
+        result = await invoicejs.getAndSaveInvoice(
+            template,
+            data,
+            {toSaveFiles: 'C:/Users/Me/Documents'}
+        );
         console.log(result);
     } catch(error) {
         throw new Error(error);
