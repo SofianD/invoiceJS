@@ -15,6 +15,8 @@ Go to [form-data-to-pdf](https://github.com/SofianD/from-data-to-pdf) to get [Fi
 ```js
 const invoicejs = require('@sofiand/invoice');
 
+let result;
+
 // template is the converted template as string.
 const template = '<html>...';
 
@@ -38,18 +40,18 @@ const data = [
 ];
 
 main();
+// Display:
+// [
+//   {
+//     name: 'Gilbert Montagnard',
+//     pathOfsavedFile: 'C:\\Users\\Me\\Documents\\Gilbert-Montagnard1616428271017.pdf'
+//   }
+// ]
 
 async function main() {
     try {
-        const response = await invoicejs.getAndSaveInvoice(template, data, {toSaveFiles: 'C:/Users/Me/Documents'});
-        console.log(response);
-        // Display:
-        // [
-        //   {
-        //     name: 'Gilbert Montagnard',
-        //     pathOfsavedFile: 'C:\\Users\\Me\\Documents\\Gilbert-Montagnard1616428271017.pdf'
-        //   }
-        // ]
+        result = await invoicejs.getAndSaveInvoice(template, data, {toSaveFiles: 'C:/Users/Me/Documents'});
+        console.log(result);
     } catch(error) {
         throw new Error(error);
     }
